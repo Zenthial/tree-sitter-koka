@@ -1,0 +1,178 @@
+{
+  "name": "koka",
+  "word": "lowerid",
+  "rules": {
+    "module": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "moduledecl"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "modulebody"
+        }
+      ]
+    },
+    "moduledecl": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "module"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "moduleid"
+        }
+      ]
+    },
+    "moduleid": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "qvarid"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "lowerid"
+        }
+      ]
+    },
+    "modulebody": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "declarations"
+      }
+    },
+    "semis": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "STRING",
+        "value": "\n"
+      }
+    },
+    "semi": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\n"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "semis"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "declarations": {
+      "type": "SYMBOL",
+      "name": "importdecl"
+    },
+    "importdecl": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "pub"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "import"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "moduleid"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "semi"
+        }
+      ]
+    },
+    "letter": {
+      "type": "PATTERN",
+      "value": "[a-z]"
+    },
+    "digit": {
+      "type": "PATTERN",
+      "value": "\\d"
+    },
+    "qvarid": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "modulepath"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "lowerid"
+        }
+      ]
+    },
+    "modulepath": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "REPEAT1",
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "lowerid"
+            },
+            {
+              "type": "STRING",
+              "value": "/"
+            }
+          ]
+        }
+      }
+    },
+    "varid": {
+      "type": "SYMBOL",
+      "name": "lowerid"
+    },
+    "pub": {
+      "type": "STRING",
+      "value": "pub"
+    },
+    "lowerid": {
+      "type": "PATTERN",
+      "value": "[a-z]([A-Za-z]|\\d|-|_)*'*"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
+

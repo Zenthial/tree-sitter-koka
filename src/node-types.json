@@ -1,0 +1,186 @@
+[
+  {
+    "type": "declarations",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "importdecl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "importdecl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "moduleid",
+          "named": true
+        },
+        {
+          "type": "pub",
+          "named": true
+        },
+        {
+          "type": "semi",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "module",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "modulebody",
+          "named": true
+        },
+        {
+          "type": "moduledecl",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "modulebody",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "declarations",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "moduledecl",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "moduleid",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "moduleid",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "lowerid",
+          "named": true
+        },
+        {
+          "type": "qvarid",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "modulepath",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "lowerid",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "qvarid",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "lowerid",
+          "named": true
+        },
+        {
+          "type": "modulepath",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "semi",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "semis",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "semis",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "\n",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": "import",
+    "named": false
+  },
+  {
+    "type": "lowerid",
+    "named": true
+  },
+  {
+    "type": "module",
+    "named": false
+  },
+  {
+    "type": "pub",
+    "named": true
+  }
+]
